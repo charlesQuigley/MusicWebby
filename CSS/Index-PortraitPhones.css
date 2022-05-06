@@ -14,6 +14,8 @@
         min-height: 5rem;
         max-height: max-content;
 
+        border-bottom: 4px solid white;
+
         flex-direction: row;
         align-items: center;
 
@@ -202,6 +204,12 @@
         color: white;
         border: 6px solid purple;
         padding: 0;
+
+        display: block;
+
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .sample-logo {
