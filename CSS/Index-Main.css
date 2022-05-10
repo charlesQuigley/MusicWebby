@@ -40,8 +40,19 @@ body{
 
 .nav-bar-standard{
     width: auto;
-    background-color: black;
+    /*A gradient going from top to bottom. It is the same shade of black from 0% to 40% of it's downward length. Then, it completely becomes
+    the lighter shade of black at 80% of it's downward length.*/
+    background: linear-gradient(180deg, rgba(37, 36, 36, 1) 0%, rgba(37, 36, 36, 0.9) 40%, rgba(63, 63, 63, 0.8) 100% ), url('../SVG/noise.svg'); 
     height: 4rem; /*height is in rem so that we can ensure that the nav bar is bigger than the menu item listings.*/
+    /*border-bottom: 4px solid white;*/
+    position: sticky;
+
+    top: 0;
+    left: 0;
+
+    z-index: 10;
+
+    
 
 }
 
@@ -70,20 +81,35 @@ ul{
     text-decoration: none;
     text-align: center;
     padding: 20px 2vw;
+
+   /* padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 2vw;
+    padding-right: 2vw;*/
+
+    transition: padding 0.3s linear, color 0.2s linear;
 }
 
 .oddList a:hover{
-    background-color: #4B0082;
-    background-color: purple;
-    padding: 24px 2vw;
+    background-color: rgba(75,0,130,0.8);
+    background-color: rgba(128 ,0 ,128);
+
+    background-image: linear-gradient(180deg, rgba(75,0,130,1) 0%, rgba(128,0,128,1) 40%, rgba(75,0,130,1) 100%);
+    padding: 30px 2vw; 
+
+    /*padding-top: 20px;
+    padding-bottom: 40px;
+    padding-left: 2vw;
+    padding-right: 2vw;*/
+
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
 }
 
 .evenList a:hover{
-    background-color: yellow;
+    background-image: linear-gradient(180deg, rgba(253, 160, 4, 1) 0%, rgba(255, 255, 0, 1) 40%, rgba(253, 160, 4, 1) 100%);
     color: black;
-    padding: 24px 2vw;
+    padding: 30px 2vw;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
 
@@ -101,7 +127,9 @@ ul{
 #index-header-img{
     height: calc(100% - 4rem);
     background-image: url('../Images/studio-image1.jpg');
-    background-size: 100% 100%;
+    background-size: 100%;
+    background-attachment: fixed;
+    background-position-y: 3.5rem ;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -135,7 +163,7 @@ ul{
 
 #socialMedia{
     position: absolute;
-    bottom: 0;
+    bottom: 5.5rem;
     width: 95%;
 
 }

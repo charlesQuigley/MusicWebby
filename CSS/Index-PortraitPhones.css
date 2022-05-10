@@ -148,7 +148,8 @@
     }
 
     #index-header-img{
-       background-size: 100% 3%;
+       background-size: auto;
+       background-image: url('../Images/studio-image-mobile-portrait.png');
     }
 
 
