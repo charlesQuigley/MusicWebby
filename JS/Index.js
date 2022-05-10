@@ -113,7 +113,10 @@ document.addEventListener('scroll', function(e){
 
     //If the current scroll Y position is not passed the bottom of the header image, do not allow the nav bar 
     //to scroll up and out of sight.
-    if(currentY < header_img_location.bottom)
+
+    console.log("Current Y: ", currentY);
+    console.log("HEader bottom Y: ", header_img_location.bottom)
+    if(currentY < header_img_location.bottom - 50)
     {
         NavBar_Mobile.classList.remove('scrollDown-navBar');
         return;
