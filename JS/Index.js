@@ -36,6 +36,18 @@ function playAudio(sampleNum)
 }
 
 
+var header_img_location;
+var documentReady = false;
+
+window.onload = function(){
+
+    //Get the position of the header image in pixels (bottom, top, right, left).
+    //The nav bar will only slide out of view once we're scrolled  passed this image.
+    header_img_location = document.querySelector("#index-header-img").getBoundingClientRect();
+
+    documentReady = true;
+
+}
 
 
 //BURGER-MENU Functions (FOR MOBILE)
@@ -93,9 +105,7 @@ var burgerMenu_bar1 = document.querySelector('#bar1'); //One of the bars of the 
                                                     //we should not slide the nav bar out of view.
 var prevY = 0; //previous Y position of user's scroll
 
-//Get the position of the header image in pixels (bottom, top, right, left).
-//The nav bar will only slide out of view once we're scrolled  passed this image.
-var header_img_location = document.querySelector("#index-header-img").getBoundingClientRect();
+
 
 
 document.addEventListener('scroll', function(e){
@@ -114,13 +124,18 @@ document.addEventListener('scroll', function(e){
     //If the current scroll Y position is not passed the bottom of the header image, do not allow the nav bar 
     //to scroll up and out of sight.
 
-    console.log("Current Y: ", currentY);
-    console.log("HEader bottom Y: ", header_img_location.bottom)
-    if(currentY < header_img_location.bottom - 50)
+    if(documentReady == true)
     {
-        NavBar_Mobile.classList.remove('scrollDown-navBar');
-        return;
+        console.log("Current Y: ", currentY);
+        console.log("HEader bottom Y: ", header_img_location.bottom)
+        if(currentY < header_img_location.bottom - 150)
+        {
+            NavBar_Mobile.classList.remove('scrollDown-navBar');
+            return;
+        }
+
     }
+
 
     //If the current Y position is greater than the previous Y position, that means the user is scrolling down.
     if(currentY > prevY){
@@ -136,13 +151,13 @@ document.addEventListener('scroll', function(e){
         }        
     }
     else{
-        //To give a little buffer, the current Y Position must be less than the previous Y Position - 4 pixels.
+        //To give a little buffer, the current Y Position must be less than the previous Y Position - 10 pixels.
         //Sometimes when the user scrolls down, when he/she lets go of the downward scroll motion,
         //he/she may accidentally scroll up a little bit, which would automatically trigger the nav bar to slide onto the screen.
         //Having the nav bar slide back into view upon this unintended micro scroll in the upward direction
         //is a little jarring and looks slightl buggy. To remedy this, some padding is added such that the user
         //would need to scroll up at least a couple of pixels before the nav bar is displayed.
-        if(currentY < prevY - 4){
+        if(currentY < prevY - 10){
             NavBar_Mobile.classList.remove('scrollDown-navBar'); //remove this class to translate the nav bar back within the screen's view.
         }
     }

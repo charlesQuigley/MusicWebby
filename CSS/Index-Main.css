@@ -128,11 +128,14 @@ ul{
     height: calc(100% - 4rem);
     background-image: url('../Images/studio-image1.jpg');
     background-size: 100%;
+    background-repeat: no-repeat;
     background-attachment: fixed;
     background-position-y: 3.5rem ;
     display: flex;
     justify-content: center;
     align-items: center;
+
+    position: relative;
 }
 
 #logo{
@@ -163,18 +166,25 @@ ul{
 
 #socialMedia{
     position: absolute;
-    bottom: 5.5rem;
-    width: 95%;
+    bottom: 0rem;
+    width: 100%;
 
+    padding-top: 2px;
+    padding-bottom: 2px;
 }
 
 #socialMedia svg{
     float: right;
-    width: 5%;
-    height: 5%;
+    width: 60px;
+    height: 60px;
     margin-left: 20px;
     margin-right: 20px;
 }
+
+.first-svg-link{
+    padding-right: 30px;
+}
+
 
 /*********************************************************************/
 

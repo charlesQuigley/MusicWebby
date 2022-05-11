@@ -134,19 +134,26 @@
 
 
     #socialMedia {
-        bottom: 5rem;
+        bottom: 0;
+        background: linear-gradient(rgba(28, 28, 28, 0.8) 0%, rgba(96, 96, 96, 0.8) 50%, rgba(28, 28, 28, 0.8) 100%), url(../SVG/noise.svg);
+        padding-top: 5px;
+        padding-bottom: 5px;
     }
 
     #socialMedia svg {
         width: 50px;
         height: 50px;
         margin-left: 0px;
-        margin-right: 14px;
+        margin-right: 20px;
+    }
+
+    .first-svg-link{
+        padding-right: 0px;
     }
 
     #index-header {
 
-        margin-bottom: 20px;
+        margin-bottom: 0px;
     }
 
     #index-header-img{
