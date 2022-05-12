@@ -104,14 +104,38 @@
             <div class="Song-Controls">
                 <hr class="Song-Controls-Separator" />
 
-                <button id="play-pause-button-1" class="playButton" onclick="playAudio(0)">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-fill play-icon-svg" viewBox="0 0 16 16">
-                        <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
-                    </svg>
-                </button>
+                <div class="Song-Button-Controls">
+                    <button id="play-pause-button-1" class="playButton song-buttons" onclick="playAudio(0)">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-fill play-icon-svg" viewBox="0 0 16 16">
+                            <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
+                        </svg>
+                    </button>
 
-                <div class="Song-Time", id="Song-Time-1">
-                    <p><span id="Song-Time-1-Start"></span>/<span id="Song-Time-1-Start"></span></p>
+                    <button id="skip-backward-button-1" class="skipBackward song-buttons" onclick="backwardAudio(0)">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-skip-backward-fill" viewBox="0 0 16 16">
+                            <path d="M.5 3.5A.5.5 0 0 0 0 4v8a.5.5 0 0 0 1 0V8.753l6.267 3.636c.54.313 1.233-.066 1.233-.697v-2.94l6.267 3.636c.54.314 1.233-.065 1.233-.696V4.308c0-.63-.693-1.01-1.233-.696L8.5 7.248v-2.94c0-.63-.692-1.01-1.233-.696L1 7.248V4a.5.5 0 0 0-.5-.5z"/>
+                        </svg>
+                    </button>
+
+                    <button id="skip-forward-button-1" class="skipForward song-buttons" onclick="forwardAudio(0)">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-skip-forward-fill" viewBox="0 0 16 16">
+                            <path d="M15.5 3.5a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-1 0V8.753l-6.267 3.636c-.54.313-1.233-.066-1.233-.697v-2.94l-6.267 3.636C.693 12.703 0 12.324 0 11.693V4.308c0-.63.693-1.01 1.233-.696L7.5 7.248v-2.94c0-.63.693-1.01 1.233-.696L15 7.248V4a.5.5 0 0 1 .5-.5z"/>
+                        </svg>
+                    </button>
+
+                    
+                    <button id="restart-button-1" class="restart song-buttons" onclick="stopAudio(0)">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor" class="bi bi-square-fill" viewBox="0 0 16 16">
+                            <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2z"/>
+                        </svg>
+                    </button>
+
+
+
+
+                    <div class="Song-Time", id="Song-Time-1">
+                        <p><span id="Song-Time-1-Current"></span>&nbsp;/&nbsp;<span id="Song-Time-1-End"></span></p>
+                    </div>
                 </div>
             </div>
 

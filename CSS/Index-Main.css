@@ -298,6 +298,8 @@ ul{
     border-radius: 2px;
     padding: 0;
 
+    background: linear-gradient(rgb(206 90 90), rgb(202 202 202));;
+
 }
 
 .Song-Content{
@@ -340,7 +342,7 @@ ul{
 }
 
 
-.playButton{
+.song-buttons{
     width: 40px;
     height: 40px;
     border-radius: 360px;
@@ -348,17 +350,33 @@ ul{
     justify-content: center;
     align-items: center;
 
+    margin-left: 2px;
+    margin-right: 10px;
+
     cursor: pointer;
 
     background-color: white;
-    transition: background-color, 0.2;
+    transition: background-color 0.2s;
 }
 
-.playButton:hover{
+.Song-Button-Controls{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 10px;
+    margin-bottom: 10px;
+        
+}
+
+
+.song-buttons:hover{
     background-color: rgb(253, 0, 253);
+    background-color: rgb(243, 100, 100);
 }
 
-.playButton:active{
+.song-buttons:active{
     background-color: rgb(138, 0, 138);
 }
 
@@ -369,5 +387,7 @@ ul{
 .Song-Time{
     color: white;
     font-weight: bold;
+
+
 }
 

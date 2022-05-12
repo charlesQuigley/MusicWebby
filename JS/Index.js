@@ -1,7 +1,7 @@
 var wavesurfer = WaveSurfer.create({
     container: '#waveform',
-    waveColor: 'violet',
-    progressColor: 'purple',
+    waveColor: '#e6292c',
+    progressColor: 'darkred',
     responsive: true,
     barRadius: 3,
     barWidth: 3,
@@ -13,6 +13,72 @@ var wavesurfer = WaveSurfer.create({
 });
 
 wavesurfer.load('Samples/Positive.wav');
+
+var song1_current_time = document.querySelector('#Song-Time-1-Current');
+
+var song1_end_time = document.querySelector('#Song-Time-1-End');
+
+wavesurfer.on('ready', function () {
+
+    var duration_minutes = Math.floor(wavesurfer.getDuration() / 60);
+    var duration_seconds = wavesurfer.getDuration() - (duration_minutes * 60);
+
+    duration_seconds = Math.floor(duration_seconds);
+
+    duration_seconds = duration_seconds.toString();
+
+    if(duration_seconds.length <= 1)
+    {
+        duration_seconds = '0' + duration_seconds;
+    }
+
+    
+    song1_current_time.innerHTML = '0:00';
+    song1_end_time.innerHTML = duration_minutes + ':' + duration_seconds;
+});
+
+wavesurfer.on('audioprocess', function(){
+    updateCurrentTime(wavesurfer);
+})
+
+/*wavesurfer.on('interaction', function(){
+    updateCurrentTime(wavesurfer);
+
+});*/
+
+wavesurfer.on('seek', function(){
+    updateCurrentTime(wavesurfer);
+
+});
+
+wavesurfer.on('finish', function(){
+
+    var playButton = document.querySelector('#play-pause-button-1');
+
+    playButton.innerHTML = "<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-play-fill play-icon-svg' viewBox='0 0 16 16'><path d='m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z'/></svg>";
+
+})
+
+function updateCurrentTime(x)
+{
+    var current_minutes = Math.floor(wavesurfer.getCurrentTime() / 60);
+    var current_seconds = wavesurfer.getCurrentTime() - (current_minutes * 60);
+
+    current_seconds = Math.floor(current_seconds);
+
+    current_seconds = current_seconds.toString();
+
+    if(current_seconds.length <= 1)
+    {
+        current_seconds = '0' + current_seconds;
+    }
+
+    
+    song1_current_time.innerHTML =  current_minutes + ':' + current_seconds;
+
+}
+
+
 
 
 function playAudio(sampleNum)
@@ -36,6 +102,24 @@ function playAudio(sampleNum)
 
 }
 
+function forwardAudio(sampleNum)
+{
+    wavesurfer.skip(10);
+}
+
+function backwardAudio(sampleNum)
+{
+    wavesurfer.skip(-10);
+}
+
+function stopAudio(sampleNum)
+{
+    var playButton = document.querySelector('#play-pause-button-1');
+
+    playButton.innerHTML = "<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-play-fill play-icon-svg' viewBox='0 0 16 16'><path d='m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z'/></svg>";
+
+    wavesurfer.stop();
+}
 
 var header_img_location;
 var documentReady = false;
@@ -47,8 +131,9 @@ window.onload = function(){
     header_img_location = document.querySelector("#index-header-img").getBoundingClientRect();
 
     documentReady = true;
-
 }
+
+
 
 
 //BURGER-MENU Functions (FOR MOBILE)
