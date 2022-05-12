@@ -14,10 +14,19 @@
 </head>
 <body>
 
-    <div id="topOfPage"></div>
+    <div id="Home"></div>
 
     <div class="nav-bar-mobile">
-        <h2>STUDIO</h2>
+        <div id="nav-bar-title">
+            <h2>Source</h2>
+            <div>
+                <hr />
+                <h2>of</h2>
+                <hr />
+            </div>
+            <h2>Sound</h2>
+            <!--<img id="logo_navbar" src="Images/logo.png" alt="SoS Studios">-->
+        </div>
         <div class="burger-icon" onclick="click_burger_menu(this)">
             <div class="burger-bar" id="bar1"></div>
             <div class="burger-bar" id="bar2"></div>
@@ -26,8 +35,8 @@
     </div>
     <div class="nav-bar-mobile-popout-menu">
         <ul>
-            <li class="oddList"><a href="#topOfPage" onclick="closeMobileMenu()">Home</a></li>
-            <li class="evenList"><a href="#about" onclick="closeMobileMenu()">About</a></li>
+            <li class="oddList"><a href="#Home" onclick="closeMobileMenu()">Home</a></li>
+            <li class="evenList"><a href="#About-Section" onclick="closeMobileMenu()">About</a></li>
             <li class="oddList"><a href="#sample-section" onclick="closeMobileMenu()">Samples</a></li>
             <li class="evenList"><a href="" onclick="closeMobileMenu()">Contact</a></li>
         </ul>
@@ -35,8 +44,8 @@
 
     <div class="nav-bar-standard">
         <ul>
-            <li class="oddList"><a href="#index-header">Home</a></li>
-            <li class="evenList"><a href="#about">About</a></li>
+            <li class="oddList"><a href="#Home">Home</a></li>
+            <li class="evenList"><a href="#About-Section">About</a></li>
             <li class="oddList"><a href="#sample-section">Samples</a></li>
             <li class="evenList"><a href="">Contact</a></li>
         </ul>
@@ -45,7 +54,7 @@
     <!--Landing page beginning stuff-->
     <div id="index-header">
         <div id="index-header-img">
-            <img  id="logo" src="Images/disc.png" alt="Logo">
+            <img  id="logo" src="Images/logo.png" alt="Logo">
 
             <div id="socialMedia">
                 <a href="https://www.facebook.com/zachmauiwowi" target="_blank">
@@ -59,6 +68,7 @@
                 </a>
             </div>
         </div>
+        <div id="About-Section" class="Anchor"></div>
     </div>
 
     <!--About Section-->
@@ -68,7 +78,7 @@
         </p>
 
         <div id="map">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d40734.594803447355!2d-97.74148013369984!3d30.269036874619133!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8644b5b0022401a5%3A0x8db39b8103a620a!2sEast%20Austin%20Hotel!5e0!3m2!1sen!2sus!4v1651686054575!5m2!1sen!2sus" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3437.7403282769455!2d-97.81807808566806!3d30.50009850385968!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x865b2d6d31aa0f51%3A0x3d81ab6b75858d7!2s930%20S%20Bell%20Blvd%20STE%20406%2C%20Cedar%20Park%2C%20TX%2078613!5e0!3m2!1sen!2sus!4v1652375683698!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
     </div>
 
@@ -80,17 +90,31 @@
         <h2>S&nbsp;A&nbsp;M&nbsp;P&nbsp;L&nbsp;E&nbsp;S</h2>
 
         <div id="sample1" class="samples">
-
-            <div class="sampleLogos">
-                <img class="sample-logo" src="Samples/Positive_Logo.png" alt="POSITIVE LOGO">
+            <div class="Song-Content">
+                <div class="sampleLogos">
+                    <img class="sample-logo" src="Samples/Positive_Logo.png" alt="POSITIVE LOGO">
+                </div>
+                <div class="wave-container">
+                    <h3>POSITIVE (feat. itoldyouitsover & Willis)</h3>
+    
+                    <div id="waveform"></div>
+                </div>
             </div>
-            <div class="wave-container">
-                <h3>POSITIVE (feat. itoldyouitsover & Willis)</h3>
 
-                <div id="waveform"></div>
-                <hr />
-                <button id="play-pause-button-1" class="playButton" onclick="playAudio(0)">></button>
+            <div class="Song-Controls">
+                <hr class="Song-Controls-Separator" />
+
+                <button id="play-pause-button-1" class="playButton" onclick="playAudio(0)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-fill play-icon-svg" viewBox="0 0 16 16">
+                        <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
+                    </svg>
+                </button>
+
+                <div class="Song-Time", id="Song-Time-1">
+                    <p><span id="Song-Time-1-Start"></span>/<span id="Song-Time-1-Start"></span></p>
+                </div>
             </div>
+
 
         </div>
 

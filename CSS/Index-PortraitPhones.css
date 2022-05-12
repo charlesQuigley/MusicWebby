@@ -30,11 +30,56 @@
 
     }
 
-    .nav-bar-mobile h2{
-        font-size: 2.2rem;
+    #nav-bar-title{
+        /*font-size: 2.2rem;*/
+        font-size: 0.8rem;
         text-align: center;
         padding-left: 20px;
+
+        margin-top: 18px;
+        margin-bottom: 12px;
+
+        letter-spacing: 2px;
+
+        transform: skew(-4deg, -9deg);
+
+        /*line-height: 1px;*/
     }
+
+    #nav-bar-title h2:nth-child(3){
+        transform: rotateY(25deg);
+    }
+
+    
+    #nav-bar-title div h2{
+        font-size: 0.7rem;
+        color: #ffce84;
+    }
+
+    #nav-bar-title div{
+        display: flex;
+        flex-direction: row;
+        text-align: center;
+
+    }
+
+    #nav-bar-title div hr{
+        width: -moz-available;
+        width: -webkit-fill-available;
+        width: fill-available;
+        background-color: #ff00a2;
+        height: 2px;
+        border: 0;
+        margin-top: auto;
+        margin-bottom: auto;
+
+    }
+
+    #logo_navbar{
+        width: 30%;
+        height: auto;
+    }
+
 
     .burger-icon{
         margin-left: auto;
@@ -252,7 +297,6 @@
 
 
     .playButton{
-        display: block;
         margin-left: auto;
         margin-right: auto;
         margin-bottom: 20px;
@@ -262,6 +306,15 @@
         font-weight: bold;
         font-size: 2rem;
     }
+
+    .playButton:hover{
+        background-color: white;
+    }
+
+    #waveform:first-child{
+        cursor: pointer;
+    }
+
 }
 
 

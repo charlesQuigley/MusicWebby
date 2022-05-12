@@ -1,7 +1,10 @@
 /*This is the main CSS file. It defines every single element styling for this website.
 This website's stylings were first developed for a laptop's screen (NOT mobile-first approach).
 As such, this CSS file describes the stylings for elements on a laptop.*/
-
+@font-face {
+    font-family: Couture;
+    src: url("../Fonts/Couture.woff") format("woff"), url("../Fonts/Couture.ttf") format("truetype"), url("../Fonts/Couture.otf") format("opentype");
+}
 
 *{
     margin: 0;
@@ -14,7 +17,10 @@ html{
 
 body{
     background-color: black;
+
+    font-family: Couture, sans-serif; 
 }
+
 
 
 /*LOGO, MENU, AND BACKGROUND*/
@@ -43,6 +49,9 @@ body{
     /*A gradient going from top to bottom. It is the same shade of black from 0% to 40% of it's downward length. Then, it completely becomes
     the lighter shade of black at 80% of it's downward length.*/
     background: linear-gradient(180deg, rgba(37, 36, 36, 1) 0%, rgba(37, 36, 36, 0.9) 40%, rgba(63, 63, 63, 0.8) 100% ), url('../SVG/noise.svg'); 
+    background: linear-gradient(rgba(28, 28, 28, 0.95) 0%, rgba(69, 69, 69, 0.8) 50%, rgba(28, 28, 28, 0.95) 100%), url(../SVG/noise.svg);
+
+    
     height: 4rem; /*height is in rem so that we can ensure that the nav bar is bigger than the menu item listings.*/
     /*border-bottom: 4px solid white;*/
     position: sticky;
@@ -136,14 +145,18 @@ ul{
     align-items: center;
 
     position: relative;
+
+    background-color: rgba(0,0,0,0.4);
+
+    background-blend-mode: color;
 }
 
 #logo{
-   filter: invert(1);
+   /*filter: invert(1);*/
    width: auto;
-   height: 40%;
+   height: 45%;
    
-   animation-name: logo-spin;
+   /*animation-name: logo-spin;
    animation-duration: 3s;
    animation-timing-function: linear;
    animation-iteration-count: infinite;
@@ -153,7 +166,8 @@ ul{
    background-image: linear-gradient(white, white), 
                      linear-gradient(to right, #19c319,#0027ff);
    background-origin: border-box;
-   background-clip: content-box, border-box;
+   background-clip: content-box, border-box; */
+
 }
 
 @keyframes logo-spin {
@@ -277,38 +291,52 @@ ul{
 .samples{
 
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     color: white;
 
     border: 2px solid purple;
-    border-radius: 10px;
-    padding: 10px;
+    border-radius: 2px;
+    padding: 0;
 
 }
+
+.Song-Content{
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    padding-right: 10px;
+    height: 150px;
+}
+
 
 .wave-container{
     width: 100%;
+    margin-top: 8px;
 }
 
-.wave-container hr{
+.wave-container h3{
+    text-align: center;
+}
+
+
+.Song-Controls-Separator{
     background-color: purple;
     border: 0;
     height: 2px;
-    margin-top: 10px;
-    margin-bottom: 20px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    width: 100%;
 }
 
 .sample-logo{
     width: auto;
     height: 150px;
-    margin-right: 30px;
-    margin-top: 10%;
+    margin-right: 10px;
+    margin-top: 0;
 }
 
 .sampleLogos{
-/*    display: flex;
-    justify-content: center;
-    align-items: center;*/
+    
 }
 
 
@@ -316,4 +344,30 @@ ul{
     width: 40px;
     height: 40px;
     border-radius: 360px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+
+    background-color: white;
+    transition: background-color, 0.2;
 }
+
+.playButton:hover{
+    background-color: rgb(253, 0, 253);
+}
+
+.playButton:active{
+    background-color: rgb(138, 0, 138);
+}
+
+.play-icon-svg{
+    padding-right: 0px;
+}
+
+.Song-Time{
+    color: white;
+    font-weight: bold;
+}
+
