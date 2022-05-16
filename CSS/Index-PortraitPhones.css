@@ -249,6 +249,7 @@
     /****************************************************/
     #sample-section {
         width: 90%;
+        margin-bottom: 200px;
     }
 
     #sample-section h2{
@@ -259,7 +260,7 @@
         display: flex;
         flex-direction: column;
         color: white;
-        border: 6px solid purple;
+        /*border: 6px solid purple;*/
         padding: 0;
 
         display: block;
@@ -267,6 +268,16 @@
         width: 70%;
         margin-left: auto;
         margin-right: auto;
+    }
+
+    .Song-Content{
+        padding: 0;
+        flex-direction: column;
+        height: auto;
+    }
+
+    .Song-Button-Controls{
+        padding-bottom: 1.2rem;
     }
 
     .sample-logo {
@@ -278,13 +289,19 @@
         border-radius: 0;
     }
 
+    .wave-container{
+        margin-top: 0px;
+    }
+
     .wave-container h3{
         padding-left: 5%;
         padding-right: 5%;
         padding-top: 28px;
         padding-bottom: 14px;
 
-        text-align: center;
+        text-align: left;
+        font-size: 1rem;
+        color: black;
     }
 
 
@@ -309,20 +326,59 @@
 
 
     .song-buttons:hover{
-        background-color: white;
+        background-color: transparent;
+    }
+
+    .song-buttons:active{
+        background-color: rgb(243, 100, 100);
     }
 
     #waveform:first-child{
         cursor: pointer;
     }
 
-}
+    .Song-Time{
+        font-size: 1rem;
+        right: auto;
+        bottom: 10px;
+    }
 
 
     /****************************************************/
 
-      
+    
+    /*Booking SECTION*/
+    /*********************************************************************/
 
-      
+    #booking-section h2{
+        margin-bottom: 100px;
+    }
+
+    #booking-section h3{
+        margin-left: 0px;
+        padding-left: 20px;
+
+    }
+
+    .booking-wrapper{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .booking-options{
+        grid-auto-rows: minmax(40vh, auto);
+    }
+
+    .booking-card{
+        padding: 30px;
+    }
+
+    .Book-Now{
+        margin-bottom: 0px;
+    }
+        
+
+
+}
 
 
